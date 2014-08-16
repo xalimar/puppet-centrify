@@ -44,7 +44,7 @@ class centrify::service {
       enable     => $::centrify::ssh_service_enable,
       subscribe  => [
         File['/etc/centrifydc/ssh/sshd_config'],
-        File['/etc/centrifydc/centrifydc.conf'],
+        #File['/etc/centrifydc/centrifydc.conf'],
         File['/etc/centrifydc/groups.allow'],
         File['/etc/centrifydc/users.allow'],
       ],
@@ -59,7 +59,7 @@ class centrify::service {
       enable     => $::centrify::dc_service_enable,
       subscribe  => [
         File['/etc/centrifydc/ssh/sshd_config'],
-        File['/etc/centrifydc/centrifydc.conf'],
+        #File['/etc/centrifydc/centrifydc.conf'],
         File['/etc/centrifydc/groups.allow'],
         File['/etc/centrifydc/users.allow'],
       ],
