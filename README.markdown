@@ -40,7 +40,6 @@ Usage
 
 **Required Options**
 
-* auth_servers: an array of DNS server names that are Active Directory servers to authenticate against
 * users_allow: an array of users that are allowed to log into the linux server that this is being run on
 	* note: groups\_allow can be used in place of users_allow 
 * adjoin_user: The username of the user that has rights to join computers to the domain
@@ -51,7 +50,6 @@ Usage
 example usage with required options:
 	
 	class { 'centrify':
-	 	auth_servers    => ["ad1.example.com', 'ad2.example.com'],
 	 	users_allow     => ['username1', 'username2'],
 	 	adjoin_user     => 'joinuser',
 	 	adjoin_password => 'joinpass123',
@@ -65,6 +63,7 @@ Some of these options should not need to be changed from the default however if 
 
 Below is a list of optional options and the default values:
 
+* auth_servers: an array of DNS server names that are Active Directory servers to authenticate against
 * dc\_package\_name: the name of the centrifydc package, there is a default of *CentrifyDC*
 * dc\_package\_ensure: the ensure of the centrifydc package, there is a default of *present*
 * dc\_service\_name: the name of the centrifydc service, there is a default of *centrifydc*

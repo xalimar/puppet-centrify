@@ -12,11 +12,6 @@ class centrify::config {
   $adjoin_server = $centrify::adjoin_server
   $group_overrides = $centrify::group_overrides
 
-  # Error check for no auth servers
-  if size($auth_servers) == 0 {
-    fail('you must provide at least one auth server for this to work')
-  }
-
   # Error check for no users or groups allowed in the system
   if size($users_allow) == 0 {
     if size($groups_allow) ==0 {
